@@ -161,6 +161,7 @@ namespace TradeMarket.Tests.IntegrationTests
 
             //assert
             httpResponse.EnsureSuccessStatusCode();
+
             await CheckCustomersInfoIntoDb(customer, customer.Id, 2);
         }
 

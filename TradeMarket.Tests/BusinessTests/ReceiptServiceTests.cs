@@ -139,7 +139,6 @@ namespace TradeMarket.Tests.BusinessTests
             actual.Should().BeEquivalentTo(expected, options => options.Excluding(x => x.Product).Excluding(x => x.Receipt));
         }
 
-
         [TestCase("1965-1-1", "1965-2-1", new[] {1, 2})]
         [TestCase("1965-2-1", "1965-4-1", new[] {3, 4, 5})]
         public async Task ReceiptServiceGetReceiptsByPeriodAsyncReturnsReceiptsInPeriod(DateTime startDate, DateTime endDate, IEnumerable<int> expectedReceiptIds)
@@ -265,7 +264,6 @@ namespace TradeMarket.Tests.BusinessTests
             mockUnitOfWork.Verify(x => x.SaveAsync(), Times.Once);
         }
 
-
         [TestCase(1)]
         [TestCase(2)]
         public async Task ReceiptServiceAddProductThrowsMarketExceptionIfProductDoesNotExist(int productId)
@@ -305,7 +303,6 @@ namespace TradeMarket.Tests.BusinessTests
             await act.Should().ThrowAsync<MarketException>();
         }
 
-
         [Test]
         public async Task ReceiptServiceCheckOutAsyncUpdatesCheckOutPropertyValueAndSavesChanges()
         {
@@ -323,7 +320,6 @@ namespace TradeMarket.Tests.BusinessTests
             receipt.IsCheckedOut.Should().BeTrue();
             mockUnitOfWork.Verify(x => x.SaveAsync(), Times.Once);
         }
-
 
         [TestCase(1, 1, 1)]
         [TestCase(2, 2, 1)]
@@ -381,9 +377,7 @@ namespace TradeMarket.Tests.BusinessTests
             //assert
             mockUnitOfWork.Verify(x => x.ReceiptDetailRepository.Delete(It.Is<ReceiptDetail>(rd => rd.ReceiptId == receipt.Id && rd.ProductId == 1)), Times.Once());
             mockUnitOfWork.Verify(x => x.SaveAsync(), Times.Once);
-        }
-
-      
+        }     
 
         private static IEnumerable<Receipt> GetTestReceiptsEntities =>
           new List<Receipt>()

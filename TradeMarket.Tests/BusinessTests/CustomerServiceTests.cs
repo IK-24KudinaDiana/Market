@@ -16,7 +16,6 @@ namespace TradeMarket.Tests.BusinessTests
 {
     public class CustomerServiceTests
     {
-
         [Test]
         public async Task CustomerServiceGetAllReturnsAllCustomers()
         {
@@ -93,7 +92,6 @@ namespace TradeMarket.Tests.BusinessTests
             //assert
             await act.Should().ThrowAsync<MarketException>();
         }
-
 
         [Test]
         public async Task CustomerServiceAddAsyncThrowsMarketExceptionWithNullObject()

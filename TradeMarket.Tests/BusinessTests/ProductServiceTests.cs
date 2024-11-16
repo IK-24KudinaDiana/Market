@@ -78,7 +78,6 @@ namespace TradeMarket.Tests.BusinessTests
             actual.Should().BeEquivalentTo(expected, options => options.Excluding(x => x.ReceiptDetailIds));
         }
 
-
         [Test]
         public async Task ProductServiceAddAsyncAddsProduct()
         {
@@ -151,7 +150,6 @@ namespace TradeMarket.Tests.BusinessTests
             //assert
             await act.Should().ThrowAsync<MarketException>();
         }
-
 
         [Test]
         public async Task ProductServiceAddCategoryAsyncThrowsMarketExceptionWithEmptyCategoryName()
@@ -273,7 +271,6 @@ namespace TradeMarket.Tests.BusinessTests
             //assert
             await act.Should().ThrowAsync<MarketException>();
         }
-
        
         [TestCase(4, new[] {6, 7})]
         [TestCase(5, new[] {10, 11})]
