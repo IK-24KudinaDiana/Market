@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.Data
 {
-	public class UnitOfWork : IUnitOfWork, IDisposable
+	public class UnitOfWork : IUnitOfWork
 	{
 		private readonly TradeMarketDbContext _context;
 
