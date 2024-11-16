@@ -23,22 +23,22 @@ namespace Data.Data
 		}
 
 		public ICustomerRepository CustomerRepository
-			=> _customerRepository ??= new CustomerRepository((TradeMarketDbContext)_context);
+			=> _customerRepository ??= new CustomerRepository(_context);
 
 		public IPersonRepository PersonRepository
-			=> _personRepository ??= new PersonRepository((TradeMarketDbContext)_context);
+			=> _personRepository ??= new PersonRepository(_context);
 
 		public IProductRepository ProductRepository
-			=> _productRepository ??= new ProductRepository((TradeMarketDbContext)_context);
+			=> _productRepository ??= new ProductRepository(_context);
 
 		public IProductCategoryRepository ProductCategoryRepository
-			=> _productCategoryRepository ??= new ProductCategoryRepository((TradeMarketDbContext)_context);
+			=> _productCategoryRepository ??= new ProductCategoryRepository(_context);
 
 		public IReceiptRepository ReceiptRepository
-			=> _receiptRepository ??= new ReceiptRepository((TradeMarketDbContext)_context);
+			=> _receiptRepository ??= new ReceiptRepository(_context);
 
 		public IReceiptDetailRepository ReceiptDetailRepository
-			=> _receiptDetailRepository ??= new ReceiptDetailRepository((TradeMarketDbContext)_context);
+			=> _receiptDetailRepository ??= new ReceiptDetailRepository(_context);
 		
 		public async Task SaveAsync()
 		{

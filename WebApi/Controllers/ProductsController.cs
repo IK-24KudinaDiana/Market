@@ -21,7 +21,7 @@ namespace WebApi.Controllers
 
 		// GET: api/products
 		[HttpGet]
-		public async Task<ActionResult<IEnumerable<ProductModel>>> Get([FromQuery] FilterSearchModel? filterModel)
+		public async Task<ActionResult<IEnumerable<ProductModel>>> Get([FromQuery] FilterSearchModel filterModel)
 		{
 			IEnumerable<ProductModel> products;
 			if (filterModel is null)
