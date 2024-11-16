@@ -28,7 +28,7 @@ namespace WebApi
 			services.AddDbContext<TradeMarketDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("Market")));
 
-			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+			services.AddAutoMapper(typeof(AutomapperProfile));
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
 			services.AddScoped<ICustomerService, CustomerService>();
 			services.AddScoped<IProductService, ProductService>();
