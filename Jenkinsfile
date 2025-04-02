@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script {
                     // Використовуємо .NET 6 для запуску тестів
-                    sh "export DOTNET_ROOT=${env.DOTNET_6} && dotnet test ${TEST_PROJECT} --configuration Release --no-build --logger trx"
+                    dotnet test C:\Users\kudin\source\repos\marketpl\TradeMarket.Tests --no-build --logger trx
                 }
             }
         }
