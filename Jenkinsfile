@@ -43,7 +43,6 @@ pipeline {
                 script {
                     // Використовуємо .NET 6 для запуску тестів
 		    sh 'dotnet build ./TradeMarket.Tests/TradeMarket.Tests.csproj --configuration Debug'
-		    sh 'ls -R'
 		    sh 'dotnet test ./TradeMarket.Tests/TradeMarket.Tests.csproj --no-build --logger trx'
                 }
             }
