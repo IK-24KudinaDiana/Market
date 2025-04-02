@@ -38,7 +38,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 // Запуск тестів для тестового проекту
-                sh "dotnet test ${TEST_PROJECT} --configuration Release --no-build --logger trx"
+                dotnet test TradeMarket.Tests/TradeMarket.Tests.csproj --configuration Release --logger trx
             }
         }
 
