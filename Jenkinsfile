@@ -42,7 +42,8 @@ pipeline {
             steps {
                 script {
                     // Використовуємо .NET 6 для запуску тестів
-                   bat 'dotnet test C:/Users/kudin/source/repos/marketpl/TradeMarket.Tests/TradeMarket.Tests.csproj --no-build --logger trx'
+		    sh 'ls -R'
+                    sh 'dotnet test TradeMarket.Tests/TradeMarket.Tests.csproj --no-build --logger trx'
                 }
             }
         }  
