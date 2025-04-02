@@ -45,22 +45,7 @@ pipeline {
                    sh 'dotnet test C:/Users/kudin/source/repos/marketpl/TradeMarket.Tests/TradeMarket.Tests.csproj --no-build --logger trx'
                 }
             }
-        }
-
-        stage('Publish') {
-            steps {
-                // Публікація основного проекту WebApi
-                sh "dotnet publish ${MAIN_PROJECT} --configuration Release --output publish"
-            }
-        }
-
-        stage('Archive Build') {
-            steps {
-                // Архівація артефактів
-                archiveArtifacts artifacts: 'publish/**', fingerprint: true
-            }
-        }
-
+        }  
     }
 
     post {
