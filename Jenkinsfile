@@ -8,13 +8,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Клонування репозиторію
-                git branch: 'main', credentialsId: 'your-credentials-id', url: 'git@github.com:your-repo-url.git'
-            }
-        }
-
+        
         stage('Setup .NET SDK') {
             steps {
                 script {
