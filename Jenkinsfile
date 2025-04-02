@@ -61,11 +61,6 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploy stage: Налаштуйте необхідний деплоймент сервіс (наприклад, Docker або Kubernetes).'
-            }
-        }
     }
 
     post {
